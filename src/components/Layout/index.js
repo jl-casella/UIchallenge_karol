@@ -16,15 +16,17 @@ const PackageTab = ({ number, active }) => (
 
 PackageTab.propTypes = {
   number: PropTypes.number.isRequired,
-  active: PropTypes.bool.isRequired
+  active: PropTypes.bool
 }
 
 const Package = () => (
   <div style={{ padding: 50 }}>
     <table style={{ width: '100%' }}>
       <thead>
-        <th>name</th>
-        <th>quantity</th>
+        <tr>
+          <th>name</th>
+          <th>quantity</th>
+        </tr>
       </thead>
 
       <tbody>
@@ -32,6 +34,7 @@ const Package = () => (
           <td>Green Ball</td>
           <td>2</td>
         </tr>
+
         <tr>
           <td>Blue Ball</td>
           <td>2</td>

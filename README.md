@@ -38,6 +38,12 @@ MAKE THE CODE AS SIMPLE AND READABLE AS YOU CAN
    quantity: 3,
    sku: "umbrella",
    location: "a3"
+ },
+ {
+   id: 99,
+   quantity: 2,
+   sku: “green-ball”,
+   location: “a4"
  }
 ]
 ```
