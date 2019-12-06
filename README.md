@@ -4,20 +4,18 @@ This challenge finality is to build a system that should be able, given a hypoth
 
 Some of the functional requirements of the system should be the following ones:
 
-- You should start by rendering all unpacked items at the left of a split view
-- In the right section, you should be able to pack the items, by previously creating their packages (you can create multiple packages and pack items inside those packages)
+- You should start by rendering all unpacked items at the left of a split view. Please mock an async call to an API to retrieve the "Hypothetical API call\*\* shown below
+- In the right section, you should view the packaged items, organised in packages.
+- you should be able to create new packages and also to remove an empty package
+- you can create multiple packages and pack items inside those packages
 - You can pack one item into the currently selected package by clicking on its row
-- You also can pack by receiving a barcode scan (keyboard input sequence) with an SKU
+- You also can pack by receiving a barcode scan (very fast keyboard input sequence) with the item's SKU
 - When an item is packed you can change it's quantities, by adding more items or removing (unpacking)
+- Please add a minimum of two good automated tests to your code (yarn test)- When all items are packed, please add a "Ship" button. When the user click that button, please print a json that you would send to a server to write the information about what is being shipped. We need to know what items from what locations are in each packages.
 
-
-
-If you are able to test your code will be welcome (yarn test).
-
-Styles are inline, replace them plus the new ones introduced in your new components with a better approach.
+You can refactor, redesign the UI or rewrite anything you want to show us the way you like to code, do html, style. Please use react and nextjs.
 
 MAKE THE CODE AS SIMPLE AND READABLE AS YOU CAN
-
 
 **Hypothetical API call**
 
@@ -43,22 +41,6 @@ MAKE THE CODE AS SIMPLE AND READABLE AS YOU CAN
  }
 ]
 ```
-
-
-**Expected result to be packed**
-
-```cmd
-1
-   Green ball (2)
-   Blue ball (4)
-   Umbrella (2)
-2
-   Green ball (3)
-   Blue ball (2)
-3
-   Umbrella (1)
-```
-
 
 ## Available built-in commands
 
