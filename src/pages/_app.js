@@ -1,8 +1,10 @@
-import React from 'react'
 import App from 'next/app'
-import NextHead from 'next/head'
 import { createGlobalStyle } from 'styled-components'
+import NextHead from 'next/head'
+import React from 'react'
 import 'normalize.css/normalize.css'
+
+import Layout from '../components/Layout'
 
 const IS_DEV = process.env.NODE_ENV !== 'production'
 
@@ -28,10 +30,10 @@ class NextApp extends App {
           <title>{`UI challenge ${IS_DEV ? ' (dev)' : ' (prod)'}`}</title>
         </NextHead>
 
-        <>
+        <Layout>
           <Component {...pageProps} />
           <UIStyles />
-        </>
+        </Layout>
       </>
     )
   }
