@@ -10,7 +10,7 @@ const UnpackedProductsTableContainer = styled.header`
   border-right: 1px solid grey;
 `
 
-const UnpackedProductsList = ({ items, onRemoveProduct }) => (
+const UnpackedProductsList = ({ items, onPackProduct }) => (
   <UnpackedProductsTableContainer>
     <h3>Unpacked products</h3>
     <table>
@@ -24,7 +24,7 @@ const UnpackedProductsList = ({ items, onRemoveProduct }) => (
       <tbody>
         {items.map(i => {
           return (
-            <tr key={i.id} onClick={() => onRemoveProduct(i.id)}>
+            <tr key={i.id} onClick={() => onPackProduct(i)}>
               <td>{i.sku}</td>
               <td>{i.location}</td>
               <td>{i.quantity}</td>
@@ -38,7 +38,7 @@ const UnpackedProductsList = ({ items, onRemoveProduct }) => (
 
 UnpackedProductsList.propTypes = {
   items: PropTypes.arrayOf(Product).isRequired,
-  onRemoveProduct: PropTypes.func.isRequired
+  onPackProduct: PropTypes.func.isRequired
 }
 
 export default UnpackedProductsList

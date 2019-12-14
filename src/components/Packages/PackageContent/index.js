@@ -9,11 +9,7 @@ const PackageContentList = styled.table`
   width: 100%;
 `
 
-const PackageContent = ({
-  packageId,
-  products,
-  onRemoveProductFromPackage
-}) => (
+const PackageContent = ({ products, onUnpackProduct }) => (
   <PackageContentList>
     <thead>
       <tr>
@@ -26,10 +22,7 @@ const PackageContent = ({
     <tbody>
       {products.map(p => {
         return (
-          <tr
-            key={p.id}
-            onClick={() => onRemoveProductFromPackage(p.id, packageId)}
-          >
+          <tr key={p.id} onClick={() => onUnpackProduct(p)}>
             <td>{p.sku}</td>
             <td>{p.quantity}</td>
             <td>{p.location}</td>
@@ -41,9 +34,8 @@ const PackageContent = ({
 )
 
 PackageContent.propTypes = {
-  packageId: PropTypes.number.isRequired,
   products: PropTypes.arrayOf(Product).isRequired,
-  onRemoveProductFromPackage: PropTypes.func.isRequired
+  onUnpackProduct: PropTypes.func.isRequired
 }
 
 export default PackageContent

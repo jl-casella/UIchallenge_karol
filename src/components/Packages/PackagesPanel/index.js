@@ -16,7 +16,7 @@ const PackagesPanel = ({
   onAddPackage,
   activePackageId,
   setActivePackageId,
-  removeProductFromPackage
+  onUnpackProduct
 }) => (
   <PackagesSectionContainer>
     <h3>Packed Products</h3>
@@ -36,7 +36,7 @@ const PackagesPanel = ({
       <PackageContent
         packageId={activePackageId}
         products={packages[activePackageId].items}
-        onRemoveProductFromPackage={removeProductFromPackage}
+        onUnpackProduct={onUnpackProduct}
       />
     )}
   </PackagesSectionContainer>
@@ -47,7 +47,7 @@ PackagesPanel.propTypes = {
   onAddPackage: PropTypes.func.isRequired,
   activePackageId: PropTypes.number,
   setActivePackageId: PropTypes.func.isRequired,
-  removeProductFromPackage: PropTypes.func.isRequired
+  onUnpackProduct: PropTypes.func.isRequired
 }
 
 export default PackagesPanel

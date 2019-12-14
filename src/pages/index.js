@@ -11,20 +11,47 @@ const Index = ({ unpackedProducts }) => {
   const productManagerInterface = useProductManager(unpackedProducts)
   const packageManagerInterface = usePackageManager()
 
+  const onPackProduct = React.useCallback(
+    product => {
+      const { removeProduct } = productManagerInterface
+      const { activePackageId, addProductToPackage } = packageManagerInterface
+
+      if (activePackageId !== undefined) {
+        removeProduct(product.id)
+        addProductToPackage(product, activePackageId)
+      }
+    },
+    [packageManagerInterface.activePackageId, productManagerInterface.products]
+  )
+
+  const onUnpackProduct = React.useCallback(
+    product => {
+      const { addProduct } = productManagerInterface
+      const {
+        activePackageId,
+        removeProductFromPackage
+      } = packageManagerInterface
+
+      if (activePackageId !== undefined) {
+        removeProductFromPackage(product.id, activePackageId)
+        addProduct(product)
+      }
+    },
+    [packageManagerInterface.activePackageId, packageManagerInterface.packages]
+  )
+
   return (
     <>
       <UnpackedProductsList
         items={productManagerInterface.products}
-        onRemoveProduct={productManagerInterface.removeProduct}
+        onPackProduct={onPackProduct}
       />
       <PackagesPanel
         packages={packageManagerInterface.packages}
         onAddPackage={packageManagerInterface.addPackage}
         activePackageId={packageManagerInterface.activePackageId}
         setActivePackageId={packageManagerInterface.setActivePackageId}
-        removeProductFromPackage={
-          packageManagerInterface.removeProductFromPackage
-        }
+        onUnpackProduct={onUnpackProduct}
       />
     </>
   )
