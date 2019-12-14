@@ -8,15 +8,16 @@ const PackageTabContainer = styled.div`
   font-weight: ${props => (props.active ? 'bold' : 'normal')};
 `
 
-const PackageTab = ({ number, active }) => (
-  <PackageTabContainer active={active}>
+const PackageTab = ({ number, active, onClick }) => (
+  <PackageTabContainer active={active} onClick={onClick}>
     <a>Package {number}</a>
   </PackageTabContainer>
 )
 
 PackageTab.propTypes = {
   number: PropTypes.number.isRequired,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  onClick: PropTypes.func.isRequired
 }
 
 export default PackageTab

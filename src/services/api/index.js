@@ -31,8 +31,10 @@ const mockedProductsResponse = [
   }
 ]
 
-const getProducts = new Promise(resolve => {
-  withMockedDelay(resolve, mockedProductsResponse)
-})
+const getUnpackedProducts = () => {
+  return new Promise(resolve => {
+    withMockedDelay(resolve, mockedProductsResponse)
+  })
+}
 
-export { getProducts }
+export { getUnpackedProducts }
