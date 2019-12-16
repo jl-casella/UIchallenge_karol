@@ -21,9 +21,9 @@ const UnpackedProductsTableContainer = styled.section`
 
 const UnpackedProductsList = ({ items, onPackProduct }) => (
   <UnpackedProductsTableContainer>
-    <h3>Unpacked products</h3>
+    <h3>Unpacked Products</h3>
     {items.length === 0 ? (
-      <p>All items have been packed!</p>
+      <p>There are no unpacked items.</p>
     ) : (
       <>
         <p>Click on the row to add product to currently selected package.</p>

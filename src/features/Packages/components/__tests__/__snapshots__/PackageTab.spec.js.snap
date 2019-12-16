@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PackageTab component test Should render correctly when active 1`] = `
+<li
+  class="PackageTab__PackageTabContainer-sc-1wzierc-0 buJVGS"
+>
+  <a>
+    Package 
+    1
+  </a>
+  <div
+    class="PackageTab__RemoveButton-sc-1wzierc-1 jNsckS"
+    role="button"
+  >
+    X
+  </div>
+</li>
+`;
+
+exports[`PackageTab component test Should render correctly when inactive 1`] = `
+<li
+  class="PackageTab__PackageTabContainer-sc-1wzierc-0 jolmYP"
+>
+  <a>
+    Package 
+    1
+  </a>
+  <div
+    class="PackageTab__RemoveButton-sc-1wzierc-1 jNsckS"
+    role="button"
+  >
+    X
+  </div>
+</li>
+`;

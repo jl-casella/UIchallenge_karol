@@ -55,7 +55,6 @@ const PackageTab = ({
       active={active}
       onClick={setActivePackage}
       removeEnabled={removeEnabled}
-      role="button"
     >
       <a>Package {number}</a>
       <Popup

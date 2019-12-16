@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BarcodeScanModal component test Should render correctly 1`] = `
+<div
+  class="Modal__ModalWrapper-sc-1njgidi-0 HFFLe"
+>
+  <h2
+    class="Modal__ModalTitle-sc-1njgidi-1 eTNGhA"
+  >
+    Barcode scan ambiguous
+  </h2>
+  <div
+    class="Modal__ModalContent-sc-1njgidi-2 jgPtAS"
+  >
+    <p>
+      Multiple products matching the barcode scan detected. Select the one to add to current package.
+    </p>
+    <table
+      class="Table-nnk0cv-0 ecmwxU BarcodeScanModal__ProductsTableShort-h0vdrt-0 cKiFDQ"
+    >
+      <thead>
+        <tr>
+          <th>
+            SKU
+          </th>
+          <th
+            class="ProductsTable__LocationHeaderCell-sc-1vgup2v-1 gxVAmz"
+          >
+            Location
+          </th>
+          <th
+            class="ProductsTable__QuantityHeaderCell-sc-1vgup2v-2 gRyJwF"
+          >
+            Quantity
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+    <hr />
+    <div
+      class="BarcodeScanModal__BarcodeScanModalActionsBar-h0vdrt-1 dfJnHa"
+    >
+      <button
+        class="Button-sc-1bop9qx-0 kLvdUe"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+`;

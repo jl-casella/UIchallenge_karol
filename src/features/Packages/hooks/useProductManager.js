@@ -37,7 +37,7 @@ const useProductManager = unpackedProducts => {
 
   const sortedProducts = React.useMemo(() => {
     return orderBy(products, ['sku', 'location'])
-  })
+  }, [products])
 
   return {
     sortedProducts,
