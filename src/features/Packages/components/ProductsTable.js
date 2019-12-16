@@ -22,8 +22,8 @@ const QuantityCell = styled.td`
   text-align: right;
 `
 
-const ProductsTable = ({ items, onProductRowClick }) => (
-  <Table>
+const ProductsTable = ({ items, onProductRowClick, className }) => (
+  <Table className={className}>
     <thead>
       <tr>
         <th>SKU</th>
@@ -47,7 +47,8 @@ const ProductsTable = ({ items, onProductRowClick }) => (
 
 ProductsTable.propTypes = {
   items: PropTypes.arrayOf(Product).isRequired,
-  onProductRowClick: PropTypes.func.isRequired
+  onProductRowClick: PropTypes.func.isRequired,
+  className: PropTypes.string
 }
 
 export default ProductsTable
