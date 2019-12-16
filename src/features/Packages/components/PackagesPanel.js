@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import Button from 'atomics/Button'
 import { Package } from '../types'
 import PackageContent from './PackageContent'
+import PackagesActionsBar from './PackagesActionsBar'
 import PackagesList from './PackagesList'
 
 const PackagesSectionContainer = styled.section`
@@ -25,7 +25,9 @@ const PackagesPanel = ({
   activePackageId,
   setActivePackageId,
   onUnpackProduct,
-  onRemovePackage
+  onRemovePackage,
+  onShipPackages,
+  remainingProducts
 }) => {
   const activePackageItems = React.useMemo(() => {
     const selectedPackage = packages.find(p => p.id === activePackageId)
@@ -35,7 +37,11 @@ const PackagesPanel = ({
   return (
     <PackagesSectionContainer>
       <h3>Packed Products</h3>
-      <Button onClick={onAddPackage}>Add Package</Button>
+      <PackagesActionsBar
+        onAddPackage={onAddPackage}
+        onShipPackages={onShipPackages}
+        shippingEnabled={remainingProducts === 0 && packages.length > 0}
+      />
       <hr />
       <PackagesList
         packages={packages}
@@ -60,7 +66,9 @@ PackagesPanel.propTypes = {
   activePackageId: PropTypes.string,
   setActivePackageId: PropTypes.func.isRequired,
   onUnpackProduct: PropTypes.func.isRequired,
-  onRemovePackage: PropTypes.func.isRequired
+  onRemovePackage: PropTypes.func.isRequired,
+  remainingProducts: PropTypes.number.isRequired,
+  onShipPackages: PropTypes.func.isRequired
 }
 
 export default PackagesPanel

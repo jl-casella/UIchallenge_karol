@@ -1,5 +1,8 @@
+import { chain } from 'lodash'
 import React from 'react'
 import uuid from 'uuid'
+
+import { postShipPackagesRequest } from '../services/api'
 
 const usePackageManager = () => {
   const [packages, setPackages] = React.useState([])
@@ -73,6 +76,25 @@ const usePackageManager = () => {
     [packages]
   )
 
+  const shipPackages = React.useCallback(() => {
+    const validPackages = packages.filter(p => p.items.length > 0)
+
+    if (validPackages.length) {
+      const packages = validPackages.map(p => ({
+        id: p.id,
+        itemsPerLocation: chain(p.items)
+          .groupBy('location')
+          .map((v, k) => ({
+            location: k,
+            products: v.map(p => ({ id: p.id, quantity: p.quantity }))
+          }))
+          .value()
+      }))
+
+      postShipPackagesRequest(packages)
+    }
+  }, [packages])
+
   return {
     packages,
     activePackageId,
@@ -80,7 +102,8 @@ const usePackageManager = () => {
     addPackage,
     addProductToPackage,
     removePackage,
-    removeProductFromPackage
+    removeProductFromPackage,
+    shipPackages
   }
 }
 

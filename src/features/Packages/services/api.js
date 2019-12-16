@@ -33,4 +33,8 @@ const getUnpackedProducts = () => {
   })
 }
 
-export { getUnpackedProducts }
+const postShipPackagesRequest = packages => {
+  console.log({ packages })
+}
+
+export { getUnpackedProducts, postShipPackagesRequest }

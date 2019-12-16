@@ -45,8 +45,9 @@ const PackageTab = ({
   const onRemoveButtonClick = e => {
     if (removeEnabled) {
       removePackage()
-      e.stopPropagation()
     }
+
+    e.stopPropagation()
   }
 
   return (
@@ -62,7 +63,7 @@ const PackageTab = ({
           <RemoveButton
             disabled={!removeEnabled}
             role="button"
-            onClick={removeEnabled ? onRemoveButtonClick : undefined}
+            onClick={onRemoveButtonClick}
           >
             X
           </RemoveButton>
@@ -78,7 +79,7 @@ const PackageTab = ({
         <span>
           {removeEnabled
             ? 'Click to remove package'
-            : 'Package must be emptied out before removing.'}
+            : 'Package must be emptied out before removing'}
         </span>
       </Popup>
     </PackageTabContainer>

@@ -55,6 +55,8 @@ const PackagesMainView = ({ unpackedProducts }) => {
         setActivePackageId={packageManagerInterface.setActivePackageId}
         onRemovePackage={packageManagerInterface.removePackage}
         onUnpackProduct={onUnpackProduct}
+        remainingProducts={productManagerInterface.sortedProducts.length}
+        onShipPackages={packageManagerInterface.shipPackages}
       />
     </>
   )
