@@ -19,8 +19,8 @@ const custom = declare(api => {
             pages: path.join(__dirname, './src/pages'),
             components: path.join(__dirname, './src/components'),
             services: path.join(__dirname, './src/services'),
-            types: path.join(__dirname, './src/types'),
-            hooks: path.join(__dirname, './src/hooks')
+            features: path.join(__dirname, './src/features'),
+            atomics: path.join(__dirname, './src/atomics')
           }
         }
       ]

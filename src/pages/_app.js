@@ -18,6 +18,10 @@ const UIStyles = createGlobalStyle`
     font-family: 'Roboto', Open Sans, Segoe UI, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `
 
 class NextApp extends App {

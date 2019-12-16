@@ -1,3 +1,4 @@
+import { orderBy } from 'lodash'
 import React from 'react'
 
 const useProductManager = unpackedProducts => {
@@ -34,8 +35,12 @@ const useProductManager = unpackedProducts => {
     [products]
   )
 
+  const sortedProducts = React.useMemo(() => {
+    return orderBy(products, ['sku', 'location'])
+  })
+
   return {
-    products,
+    sortedProducts,
     addProduct,
     removeProduct
   }

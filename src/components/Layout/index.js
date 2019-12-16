@@ -7,7 +7,8 @@ const AppHeader = styled.header`
   padding: 0 20px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid grey;
+  background-color: black;
+  color: white;
 `
 
 const DashboardContainer = styled.section`
@@ -18,6 +19,11 @@ const DashboardContainer = styled.section`
 const DashboardContent = styled.div`
   display: flex;
   height: 100%;
+  overflow-y: auto;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 const Layout = props => (

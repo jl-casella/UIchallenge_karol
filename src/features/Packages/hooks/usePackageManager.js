@@ -1,25 +1,31 @@
 import React from 'react'
+import uuid from 'uuid'
 
 const usePackageManager = () => {
   const [packages, setPackages] = React.useState([])
   const [activePackageId, setActivePackageId] = React.useState(undefined)
 
   const addPackage = React.useCallback(() => {
-    setActivePackageId(packages.length)
-    setPackages([...packages, { items: [] }])
+    const newPackageId = uuid.v4()
+
+    setPackages([...packages, { id: newPackageId, items: [] }])
+    setActivePackageId(newPackageId)
   }, [packages])
 
-  const updatePackage = React.useCallback((packageId, newContent) => {
-    setPackages(
-      packages.map((p, i) =>
-        i === packageId ? { ...p, items: newContent } : p
+  const updatePackage = React.useCallback(
+    (packageId, newContent) => {
+      setPackages(
+        packages.map(p =>
+          p.id === packageId ? { ...p, items: newContent } : p
+        )
       )
-    )
-  })
+    },
+    [packages]
+  )
 
   const addProductToPackage = React.useCallback(
     (product, packageId) => {
-      const packageToUpdate = packages[packageId]
+      const packageToUpdate = packages.find(p => p.id === packageId)
 
       if (packageToUpdate) {
         const newPackageContent = packageToUpdate.items.find(
@@ -36,9 +42,20 @@ const usePackageManager = () => {
     [packages]
   )
 
+  const removePackage = React.useCallback(
+    packageId => {
+      if (activePackageId === packageId) {
+        setActivePackageId(undefined)
+      }
+
+      setPackages(packages.filter(p => p.id !== packageId))
+    },
+    [packages, activePackageId]
+  )
+
   const removeProductFromPackage = React.useCallback(
     (productId, packageId) => {
-      const packageToUpdate = packages[packageId]
+      const packageToUpdate = packages.find(p => p.id === packageId)
       const productToRemove =
         packageToUpdate && packageToUpdate.items.find(i => i.id === productId)
 
@@ -62,6 +79,7 @@ const usePackageManager = () => {
     setActivePackageId,
     addPackage,
     addProductToPackage,
+    removePackage,
     removeProductFromPackage
   }
 }

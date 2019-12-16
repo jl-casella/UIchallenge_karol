@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import PackageContent from '../PackageContent'
-import { Package } from 'types/Packages'
-import Button from '../../../atomics/Button'
-import PackagesList from '../PackagesList'
+import Button from 'atomics/Button'
+import { Package } from '../types'
+import PackageContent from './PackageContent'
+import PackagesList from './PackagesList'
 
 const PackagesSectionContainer = styled.section`
   padding: 20px;
