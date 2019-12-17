@@ -34,7 +34,7 @@ const getUnpackedProducts = () => {
 }
 
 const postShipPackagesRequest = packages => {
-  console.log({ packages })
+  console.log(JSON.stringify({ packages }))
 }
 
 export { getUnpackedProducts, postShipPackagesRequest }
