@@ -64,20 +64,11 @@ const PackagesMainView = ({ unpackedProducts }) => {
         closeOnDocumentClick={false}
         contentStyle={{ width: '60%' }}
       >
-        {close => {
-          const onModalClose = () => {
-            barcodeScannerInterface.onModalClose()
-            close()
-          }
-
-          return (
-            <BarcodeScanModal
-              onModalClose={onModalClose}
-              products={barcodeScannerInterface.availableChoices}
-              onPackProduct={onPackProduct}
-            />
-          )
-        }}
+        <BarcodeScanModal
+          onModalClose={barcodeScannerInterface.onModalClose}
+          products={barcodeScannerInterface.availableChoices}
+          onPackProduct={onPackProduct}
+        />
       </Popup>
     </>
   )
