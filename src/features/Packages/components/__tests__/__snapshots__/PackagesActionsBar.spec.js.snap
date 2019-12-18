@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PackagesActionsBar component test Should render correctly 1`] = `
+<section
+  class="PackagesActionsBar__PackagesActionsBarContainer-z0x8td-0 iRVhUU"
+>
+  <button
+    class="Button-sc-1bop9qx-0 kLvdUe"
+  >
+    Add Package
+  </button>
+  <button
+    class="Button-sc-1bop9qx-0 eWZitS"
+    disabled=""
+  >
+    Ship!
+  </button>
+</section>
+`;

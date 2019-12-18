@@ -5,13 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "dev": "NODE_ENV=development node src/server.js",
+    "dev": "cross-env NODE_ENV=development node src/server.js",
     "build": "next build src",
-    "start": "NODE_ENV=production node src/server.js",
-    "lint:js": "eslint 'src/**/*.js'",
-    "lint:js:fix": "eslint 'src/**/*.js' --fix",
-    "lint:css": "stylelint './src/**/*.js' --syntax scss",
-    "lint:css:fix": "stylelint './src/**/*.js' --syntax scss --fix",
+    "start": "cross-env NODE_ENV=production node src/server.js",
+    "lint:js": "eslint \"src/**/*.js\"",
+    "lint:js:fix": "eslint \"src/**/*.js\" --fix",
+    "lint:css": "stylelint \"./src/**/*.js\" --syntax scss",
+    "lint:css:fix": "stylelint \"./src/**/*.js\" --syntax scss --fix",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix"
   },
@@ -40,12 +40,14 @@
     "@babel/preset-react": "^7.7.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.2.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-dynamic-import": "^2.1.0",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
@@ -64,6 +66,7 @@
     "next-plugin-custom-babel-config": "^1.0.2",
     "next-transpile-modules": "^2.3.1",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
     "stylelint": "^12.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -74,11 +77,14 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "next": "^9.1.4",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1"
+    "reactjs-popup": "^1.5.0",
+    "styled-components": "^4.4.1",
+    "uuid": "^3.3.3"
   }
 }

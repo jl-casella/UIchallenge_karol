@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsTable component test Should render correctly 1`] = `
+<table
+  class="Table-nnk0cv-0 ecmwxU"
+>
+  <thead>
+    <tr>
+      <th>
+        SKU
+      </th>
+      <th
+        class="ProductsTable__LocationHeaderCell-sc-1vgup2v-1 gxVAmz"
+      >
+        Location
+      </th>
+      <th
+        class="ProductsTable__QuantityHeaderCell-sc-1vgup2v-2 gRyJwF"
+      >
+        Quantity
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="ProductsTable__ProductsTableRow-sc-1vgup2v-0 gZpYFG"
+    >
+      <td>
+        green-ball
+      </td>
+      <td>
+        a1
+      </td>
+      <td
+        class="ProductsTable__QuantityCell-sc-1vgup2v-3 hRppQA"
+      >
+        5
+      </td>
+    </tr>
+    <tr
+      class="ProductsTable__ProductsTableRow-sc-1vgup2v-0 gZpYFG"
+    >
+      <td>
+        red-ball
+      </td>
+      <td>
+        a2
+      </td>
+      <td
+        class="ProductsTable__QuantityCell-sc-1vgup2v-3 hRppQA"
+      >
+        6
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

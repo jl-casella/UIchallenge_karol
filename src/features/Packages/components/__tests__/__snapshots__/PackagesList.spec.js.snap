@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PackagesList component test Should render correctly 1`] = `
+<ul
+  class="PackagesList__PackagesListContainer-sc-1qpl6ke-0 ELSMu"
+>
+  <li
+    class="PackageTab__PackageTabContainer-sc-1wzierc-0 jolmYP"
+  >
+    <a>
+      Package 
+      1
+    </a>
+    <div
+      class="PackageTab__RemoveButton-sc-1wzierc-1 jNsckS"
+      role="button"
+    >
+      X
+    </div>
+  </li>
+  <li
+    class="PackageTab__PackageTabContainer-sc-1wzierc-0 jolmYP"
+  >
+    <a>
+      Package 
+      2
+    </a>
+    <div
+      class="PackageTab__RemoveButton-sc-1wzierc-1 jNsckS"
+      role="button"
+    >
+      X
+    </div>
+  </li>
+</ul>
+`;

@@ -1,25 +1,20 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-import { Layout } from 'components/Layout'
+import { getUnpackedProducts } from 'features/Packages/services/api'
+import PackagesMainView from 'features/Packages/components/PackagesMainView'
 
-const Index = () => (
-  <>
-    <header
-      style={{
-        height: 50,
-        padding: '0 20px',
-        display: 'flex',
-        alignItems: 'center',
-        borderBottom: '1px solid grey'
-      }}
-    >
-      <p>UI challenge</p>
-    </header>
+const Index = ({ unpackedProducts }) => {
+  return <PackagesMainView unpackedProducts={unpackedProducts} />
+}
 
-    <section style={{ height: 'calc(100vh - 50px)', overflow: 'hidden' }}>
-      <Layout />
-    </section>
-  </>
-)
+Index.propTypes = {
+  unpackedProducts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired
+}
+
+Index.getInitialProps = async () => {
+  const unpackedProducts = await getUnpackedProducts()
+  return { unpackedProducts }
+}
 
 export default Index

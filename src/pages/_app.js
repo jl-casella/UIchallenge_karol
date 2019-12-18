@@ -1,8 +1,10 @@
-import React from 'react'
 import App from 'next/app'
-import NextHead from 'next/head'
 import { createGlobalStyle } from 'styled-components'
+import NextHead from 'next/head'
+import React from 'react'
 import 'normalize.css/normalize.css'
+
+import Layout from '../components/Layout'
 
 const IS_DEV = process.env.NODE_ENV !== 'production'
 
@@ -16,6 +18,10 @@ const UIStyles = createGlobalStyle`
     font-family: 'Roboto', Open Sans, Segoe UI, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `
 
 class NextApp extends App {
@@ -28,10 +34,10 @@ class NextApp extends App {
           <title>{`UI challenge ${IS_DEV ? ' (dev)' : ' (prod)'}`}</title>
         </NextHead>
 
-        <>
+        <Layout>
           <Component {...pageProps} />
           <UIStyles />
-        </>
+        </Layout>
       </>
     )
   }
